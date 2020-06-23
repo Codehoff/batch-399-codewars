@@ -1,2 +1,42 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class=container>
+  <div class=card>
+    <div class=box>
+      <div class=percent>
+        <svg>
+          <circle cx=70 cy=70 r=70></circle>
+          <circle id=stroke cx=70 cy=70 r=70></circle>
+        </svg>
+        <div class=number id=inner-text>
+          <h2>90<span>%</span></h2>
+        </div>
+      </div >
+      <h2 id=kyu-level class=text>HTML</h2>
+    </div>
+  </div>
+</div>
+<div id=percentage style=color:transparent><%=@percentage%></div>
+<div id=kyu style=color:transparent><%=@kyu%></div>
+
+
+
+
+<script>
+
+let clicker = document.getElementById("btnx")
+let percent = document.getElementById("stroke")
+let inner_text = document.getElementById("inner-text")
+let progress = document.getElementById("percentage")
+let kyu = document.getElementById("kyu")
+let kyuLevel = document.getElementById("kyu-level")
+
+
+let x = (440 - (440 * progress.innerHTML) / 100 );
+
+document.addEventListener("DOMContentLoaded", changePercentage())
+
+function changePercentage() {
+  percent.setAttribute("style", `stroke-dashoffset: ${x};`);
+  inner_text.innerHTML = `<h2>${progress.innerHTML}<span>%</span></h2>`
+  kyuLevel.innerHTML = kyu.innerHTML
+}
+</script>
