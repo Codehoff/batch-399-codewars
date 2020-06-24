@@ -1,4 +1,4 @@
-<h1 style=color:white;margin-top:80px;margin-left:19px;><%=@member.username%></h1>
+<h1 style="color:white;margin-top:80px;margin-left:19px;"><%=@member.username%></h1>
 <div class="container d-flex flex-column" style="margin-top: 100px">
   <h2 class=my-5 style=color:white>Current rank:</h2>
   <div class=card>
@@ -18,24 +18,27 @@
 </div>
 <div id=percentage style=color:transparent><%=@percentage%></div>
 <div id=kyu style=color:transparent><%=@kyu%></div>
+<div id=color style=color:transparent><%=@color%></div>
 
 <script>
 
-let clicker = document.getElementById("btnx")
-let percent = document.getElementById("stroke")
-let inner_text = document.getElementById("inner-text")
-let progress = document.getElementById("percentage")
-let kyu = document.getElementById("kyu")
-let kyuLevel = document.getElementById("kyu-level")
+var clicker = document.getElementById("btnx")
+var percent = document.getElementById("stroke")
+var inner_text = document.getElementById("inner-text")
+var progress = document.getElementById("percentage")
+var kyu = document.getElementById("kyu")
+var kyuLevel = document.getElementById("kyu-level")
 
 
-let x = (440 - (440 * progress.innerHTML) / 100 );
+var x = (440 - (440 * progress.innerHTML) / 100 );
 
-document.addEventListener("DOMContentLoaded", changePercentage())
+window.addEventListener("load", changePercentage())
 
 function changePercentage() {
   percent.setAttribute("style", `stroke-dashoffset: ${x};`);
   inner_text.innerHTML = `<h2>${progress.innerHTML}<span>%</span></h2>`
   kyuLevel.innerHTML = kyu.innerHTML
 }
+
+
 </script>
