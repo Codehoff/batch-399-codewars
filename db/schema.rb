@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2020_06_24_110525) do
     t.string "rank"
     t.integer "score"
     t.integer "honor"
+    t.integer "completed_katas"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

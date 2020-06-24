@@ -129,3 +129,25 @@ svg circle {
     stroke-dashoffset: 440;
     stroke: #00ff43;
 }
+
+.rank {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.percentage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.banner-name {
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    vertical-align: middle;
+
+}
+

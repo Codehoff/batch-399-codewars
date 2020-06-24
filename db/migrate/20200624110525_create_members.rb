@@ -7,6 +7,7 @@ class CreateMembers < ActiveRecord::Migration[6.0]
       t.string :rank
       t.integer :score
       t.integer :honor
+      t.integer :completed_katas
 
       t.timestamps
     end
