@@ -1,6 +1,24 @@
-.navbar-lewagon {
+.navbar {
+  display: flex;
   justify-content: space-between;
-  background: white;
+  background-color:transparent;
+  color: white;
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+}
+
+.navbar-nav {
+  display:flex;
+  justify-content: space-between;
+  background-color:transparent;
+  color: white;
+
+}
+
+.nav-link {
+  color:white;
 }
 
 .navbar-lewagon .navbar-collapse {

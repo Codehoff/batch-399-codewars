@@ -1,7 +1,5 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
     min-height: 100vh;
     background: #101010;
 }
@@ -112,6 +110,7 @@ svg {
     width: 150px;
     height: 150px;
     z-index: 1000;
+    transform: rotate(270deg);
 }
 
 svg circle {
@@ -121,7 +120,8 @@ svg circle {
     stroke: #191919;
     stroke-width: 10;
     stroke-linecap: round;
-    transform: translate(5px,5px)
+    transform: translate(5px,5px);
+
 }
 
 #stroke {

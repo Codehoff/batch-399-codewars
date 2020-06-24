@@ -1,42 +1,34 @@
-<div class=container>
-  <div class=card>
-    <div class=box>
-      <div class=percent>
-        <svg>
-          <circle cx=70 cy=70 r=70></circle>
-          <circle id=stroke cx=70 cy=70 r=70></circle>
-        </svg>
-        <div class=number id=inner-text>
-          <h2>90<span>%</span></h2>
-        </div>
-      </div >
-      <h2 id=kyu-level class=text>HTML</h2>
-    </div>
+<div class=banner style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1547954575-855750c57bd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)">
+  <div class=banner-content>
+    <h1>Batch 399 vs Codewars</h1>
+    <button class=p-2 style="background:#2FB45A; color:white;border:none;border-radius:5px;" onClick="document.getElementById('clan-table').scrollIntoView();">
+    See our leaderboard
+    </button>
   </div>
 </div>
-<div id=percentage style=color:transparent><%=@percentage%></div>
-<div id=kyu style=color:transparent><%=@kyu%></div>
-
-
-
-
-<script>
-
-let clicker = document.getElementById("btnx")
-let percent = document.getElementById("stroke")
-let inner_text = document.getElementById("inner-text")
-let progress = document.getElementById("percentage")
-let kyu = document.getElementById("kyu")
-let kyuLevel = document.getElementById("kyu-level")
-
-
-let x = (440 - (440 * progress.innerHTML) / 100 );
-
-document.addEventListener("DOMContentLoaded", changePercentage())
-
-function changePercentage() {
-  percent.setAttribute("style", `stroke-dashoffset: ${x};`);
-  inner_text.innerHTML = `<h2>${progress.innerHTML}<span>%</span></h2>`
-  kyuLevel.innerHTML = kyu.innerHTML
-}
-</script>
+<div>
+<table id=clan-table class="table table-dark table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Username</th>
+      <th scope="col">Rank</th>
+      <th scope="col">Score</th>
+      <th scope="col">Honor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% i = 1 %>
+      <% Member.all.order("score DESC").each do |member| %>
+          <tr>
+            <th scope="row"><%= i %></th>         
+            <td ><a href="/members/<%=member.id%>"><%=member.username%></a></td> 
+            <td><%=member.rank %></td>
+            <td><%=member.score %></td>
+            <td><%=member.honor %></td>
+          </tr>
+      <% i += 1 %>
+    <% end %>
+  </tbody>
+</table>
+</div>
