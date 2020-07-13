@@ -24,7 +24,7 @@
       <% Member.all.order("score DESC").each do |member| %>
           <tr>
             <th scope="row"><%= i %></th>         
-            <td><a href="/members/<%=member.id%>"><%=member.username.gsub("%20", " ")%></a></td>
+            <td><a href="/members/<%=member.id%>"><%=member.username.gsub("%20", " ") %></a></td>
             <td><%=member.first_name%></td>
             <td><%=member.last_name %></td>
             <td><%=member.rank %></td>
